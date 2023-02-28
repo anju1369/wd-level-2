@@ -6,7 +6,7 @@ let pc = "";
 let rc = "";
 let rs;
 
-fs.readFile("home.html", (errors, home) => {
+fs.readFile("/home.html", (errors, home) => {
   if (errors) {
     throw errors;
   }
@@ -16,20 +16,20 @@ fs.readFile("home.html", (errors, home) => {
   
 });
 
-fs.readFile("project.html", (errors, project) => {
+fs.readFile("/project.html", (errors, project) => {
   if (errors) {
     throw errors;
   }
   pc = project;
 });
 
-fs.readFile("registration.html", (errors, registration) => {
+fs.readFile("/registration.html", (errors, registration) => {
   if (errors) {
     throw errors;
   }
   rc = registration;
 });
-fs.readFile("script.js",(err,data)=>{
+fs.readFile("/script.js",(err,data)=>{
   if (err) throw err;
   rs=data.toString();
 })
