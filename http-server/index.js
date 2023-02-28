@@ -4,6 +4,7 @@ const args = require("minimist")(process.argv);
 let hc = "";
 let pc = "";
 let rc = "";
+let rs;
 
 fs.readFile("home.html", (errors, home) => {
   if (errors) {
@@ -28,6 +29,10 @@ fs.readFile("registration.html", (errors, registration) => {
   }
   rc = registration;
 });
+fs.readFile("script.js",(err,data)=>{
+  if (err) throw err;
+  rs=data.toString();
+})
 
 http
   .createServer((request, response) => {
