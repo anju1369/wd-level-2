@@ -4,9 +4,8 @@ const args = require("minimist")(process.argv);
 let hc = "";
 let pc = "";
 let rc = "";
-let rs;
 
-fs.readFile("/home.html", (errors, home) => {
+fs.readFile("home.html", (errors, home) => {
   if (errors) {
     throw errors;
   }
@@ -16,14 +15,14 @@ fs.readFile("/home.html", (errors, home) => {
   
 });
 
-fs.readFile("/project.html", (errors, project) => {
+fs.readFile("project.html", (errors, project) => {
   if (errors) {
     throw errors;
   }
   pc = project;
 });
 
-fs.readFile("/registration.html", (errors, registration) => {
+fs.readFile("registration.html", (errors, registration) => {
   if (errors) {
     throw errors;
   }
@@ -43,7 +42,7 @@ http
         response.write(pc);
         response.end();
         break;
-      case "/registration.html":
+      case "/registration":
         response.write(rc);
         response.end();
         break;
