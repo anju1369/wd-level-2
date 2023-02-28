@@ -1,5 +1,5 @@
-const hs = require("h_server");
-const fs = require("f_server");
+const http = require("http");
+const fs = require("fs");
 const args = require("minimist")(process.argv);
 let hc = "";
 let pc = "";
@@ -29,7 +29,7 @@ fs.readFile("registration.html", (errors, registration) => {
   rc = registration;
 });
 
-hs
+http
   .createServer((request, response) => {
     let url = request.url;
     response.writeHeader(200, { "Content-Type": "text/html" });
