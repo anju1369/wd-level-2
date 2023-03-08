@@ -42,7 +42,7 @@ const todoList = () => {
               t = "[x]";
           }
           else {
-              t = "[]";
+              t = "[ ]";
           }
           const p =
               i.dueDate.split("-")[2] == date.getDate()
